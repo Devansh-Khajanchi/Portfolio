@@ -29,9 +29,13 @@ export default function Nav() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="no-underline text-foreground font-semibold tracking-tight text-sm"
+          className="no-underline text-foreground flex items-center gap-3"
         >
-          Devansh Khajanchi
+          <svg viewBox="0 0 500 500" className="h-6 w-6 fill-current" aria-hidden>
+            <path d="M0,0v497.2v2.8c138.1,0,250-111.9,250-250S138.1,0,0,0z" />
+            <polygon points="250,250 500,500 500,0" />
+          </svg>
+          <span className="font-semibold tracking-tight text-sm">Devansh Khajanchi</span>
         </Link>
 
         {/* Desktop links — hidden below md */}
