@@ -1,0 +1,173 @@
+/* =============================================================================
+   TYPE SCALE
+   Primary typeface: DM Sans (variable, via next/font/google)
+   Monospace: Geist Mono
+
+   Primitive scale: xs → 7xl (t-shirt sizing)
+   Semantic roles:  display, h1–h6, body-lg, body, body-sm, label, caption, code
+
+   Size floors:
+     Desktop (≥768px) — minimum 14px (0.875rem)
+     Mobile  (<768px) — minimum 16px (1rem)
+
+   Nothing is hardcoded — always consume via CSS custom properties.
+   ============================================================================= */
+
+:root {
+
+  /* -------------------------------------------------------------------------
+     PRIMITIVE SCALE — mobile first (min 16px on mobile)
+     ------------------------------------------------------------------------- */
+  --text-xs:  1rem;       /* 16px — bumped to mobile min */
+  --text-sm:  1rem;       /* 16px — bumped to mobile min */
+  --text-md:  1rem;       /* 16px */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-xl:  1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 2.75rem;    /* 44px */
+  --text-6xl: 3.25rem;    /* 52px */
+  --text-7xl: 4rem;       /* 64px */
+
+  /* -------------------------------------------------------------------------
+     LINE HEIGHTS
+     ------------------------------------------------------------------------- */
+  --leading-none:    1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose:   1.8;
+
+  /* -------------------------------------------------------------------------
+     FONT WEIGHTS (DM Sans variable: 100–1000)
+     ------------------------------------------------------------------------- */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-black:     900;
+
+  /* -------------------------------------------------------------------------
+     LETTER SPACING
+     ------------------------------------------------------------------------- */
+  --tracking-tightest: -0.04em;
+  --tracking-tight:    -0.02em;
+  --tracking-normal:    0em;
+  --tracking-wide:      0.02em;
+  --tracking-wider:     0.06em;
+  --tracking-widest:    0.12em;
+
+  /* -------------------------------------------------------------------------
+     SEMANTIC ROLES — size, leading, weight, tracking
+     Compose these into a text style by consuming all four vars together.
+     ------------------------------------------------------------------------- */
+
+  /* Display — hero titles, above h1 */
+  --text-display:          var(--text-7xl);
+  --leading-display:       var(--leading-tight);
+  --weight-display:        var(--weight-bold);
+  --tracking-display:      var(--tracking-tightest);
+
+  /* H1 */
+  --text-h1:               var(--text-6xl);
+  --leading-h1:            var(--leading-tight);
+  --weight-h1:             var(--weight-bold);
+  --tracking-h1:           var(--tracking-tight);
+
+  /* H2 */
+  --text-h2:               var(--text-5xl);
+  --leading-h2:            var(--leading-tight);
+  --weight-h2:             var(--weight-semibold);
+  --tracking-h2:           var(--tracking-tight);
+
+  /* H3 */
+  --text-h3:               var(--text-4xl);
+  --leading-h3:            var(--leading-snug);
+  --weight-h3:             var(--weight-semibold);
+  --tracking-h3:           var(--tracking-tight);
+
+  /* H4 */
+  --text-h4:               var(--text-3xl);
+  --leading-h4:            var(--leading-snug);
+  --weight-h4:             var(--weight-semibold);
+  --tracking-h4:           var(--tracking-normal);
+
+  /* H5 */
+  --text-h5:               var(--text-2xl);
+  --leading-h5:            var(--leading-snug);
+  --weight-h5:             var(--weight-medium);
+  --tracking-h5:           var(--tracking-normal);
+
+  /* H6 */
+  --text-h6:               var(--text-xl);
+  --leading-h6:            var(--leading-snug);
+  --weight-h6:             var(--weight-medium);
+  --tracking-h6:           var(--tracking-normal);
+
+  /* Body Large */
+  --text-body-lg:          var(--text-lg);
+  --leading-body-lg:       var(--leading-relaxed);
+  --weight-body-lg:        var(--weight-regular);
+  --tracking-body-lg:      var(--tracking-normal);
+
+  /* Body (default) */
+  --text-body:             var(--text-md);
+  --leading-body:          var(--leading-normal);
+  --weight-body:           var(--weight-regular);
+  --tracking-body:         var(--tracking-normal);
+
+  /* Body Small */
+  --text-body-sm:          var(--text-sm);
+  --leading-body-sm:       var(--leading-normal);
+  --weight-body-sm:        var(--weight-regular);
+  --tracking-body-sm:      var(--tracking-normal);
+
+  /* Label — UI labels, nav, buttons */
+  --text-label:            var(--text-sm);
+  --leading-label:         var(--leading-none);
+  --weight-label:          var(--weight-medium);
+  --tracking-label:        var(--tracking-normal);
+
+  /* Caption — supporting/meta text */
+  --text-caption:          var(--text-xs);
+  --leading-caption:       var(--leading-normal);
+  --weight-caption:        var(--weight-regular);
+  --tracking-caption:      var(--tracking-normal);
+
+  /* Overline — small all-caps labels */
+  --text-overline:         var(--text-xs);
+  --leading-overline:      var(--leading-none);
+  --weight-overline:       var(--weight-medium);
+  --tracking-overline:     var(--tracking-widest);
+
+  /* Code */
+  --text-code:             var(--text-sm);
+  --leading-code:          var(--leading-relaxed);
+  --weight-code:           var(--weight-regular);
+  --tracking-code:         var(--tracking-normal);
+
+}
+
+/* -------------------------------------------------------------------------
+   DESKTOP OVERRIDES (≥768px)
+   Primitive scale gets its true desktop values — minimum 14px (0.875rem)
+   Semantic roles inherit automatically through var() chain.
+   ------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  :root {
+    --text-xs:  0.75rem;    /* 12px — caption/overline only */
+    --text-sm:  0.875rem;   /* 14px — desktop min */
+    --text-md:  1rem;       /* 16px */
+    --text-lg:  1.125rem;   /* 18px */
+    --text-xl:  1.25rem;    /* 20px */
+    --text-2xl: 1.5rem;     /* 24px */
+    --text-3xl: 1.875rem;   /* 30px */
+    --text-4xl: 2.25rem;    /* 36px */
+    --text-5xl: 3rem;       /* 48px */
+    --text-6xl: 3.75rem;    /* 60px */
+    --text-7xl: 4.5rem;     /* 72px */
+  }
+}

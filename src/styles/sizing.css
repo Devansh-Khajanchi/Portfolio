@@ -1,0 +1,151 @@
+/* =============================================================================
+   SIZING, SPACING & CORNER RADIUS TOKENS
+   Base unit: 4px (0.25rem) — every value is a strict multiple of 4.
+
+   Sections:
+     1. Spacing primitives — numeric scale (4px increments)
+     2. Spacing semantic   — t-shirt aliases (2xs → 5xl)
+     3. Corner radius      — primitive + semantic role aliases
+     4. Sizing             — component heights, icon sizes, container widths
+   ============================================================================= */
+
+:root {
+
+  /* =========================================================================
+     1. SPACING — PRIMITIVE SCALE
+     Base: 4px = 0.25rem. Every step is an exact multiple of 4px.
+     Named by Tailwind-compatible step number (1 step = 4px).
+     ========================================================================= */
+  --space-px: 1px;      /* border-only exception — not a spacing unit */
+  --space-0:  0rem;     /*   0px */
+  --space-1:  0.25rem;  /*   4px */
+  --space-2:  0.5rem;   /*   8px */
+  --space-3:  0.75rem;  /*  12px */
+  --space-4:  1rem;     /*  16px */
+  --space-5:  1.25rem;  /*  20px */
+  --space-6:  1.5rem;   /*  24px */
+  --space-7:  1.75rem;  /*  28px */
+  --space-8:  2rem;     /*  32px */
+  --space-9:  2.25rem;  /*  36px */
+  --space-10: 2.5rem;   /*  40px */
+  --space-11: 2.75rem;  /*  44px */
+  --space-12: 3rem;     /*  48px */
+  --space-14: 3.5rem;   /*  56px */
+  --space-16: 4rem;     /*  64px */
+  --space-20: 5rem;     /*  80px */
+  --space-24: 6rem;     /*  96px */
+  --space-28: 7rem;     /* 112px */
+  --space-32: 8rem;     /* 128px */
+  --space-36: 9rem;     /* 144px */
+  --space-40: 10rem;    /* 160px */
+  --space-48: 12rem;    /* 192px */
+  --space-56: 14rem;    /* 224px */
+  --space-64: 16rem;    /* 256px */
+  --space-72: 18rem;    /* 288px */
+  --space-80: 20rem;    /* 320px */
+  --space-96: 24rem;    /* 384px */
+
+  /* =========================================================================
+     2. SPACING — SEMANTIC (T-SHIRT)
+     These are the tokens to reach for when building components.
+     Never write a raw px value — always pick the nearest semantic token.
+     ========================================================================= */
+  --space-2xs: var(--space-1);    /*   4px — micro gaps, icon nudges */
+  --space-xs:  var(--space-2);    /*   8px — tight internal padding */
+  --space-sm:  var(--space-3);    /*  12px — small padding */
+  --space-md:  var(--space-4);    /*  16px — base unit, standard padding */
+  --space-lg:  var(--space-6);    /*  24px — comfortable spacing */
+  --space-xl:  var(--space-8);    /*  32px — section gaps */
+  --space-2xl: var(--space-12);   /*  48px — large section gaps */
+  --space-3xl: var(--space-16);   /*  64px — page-level spacing */
+  --space-4xl: var(--space-24);   /*  96px — hero-level spacing */
+  --space-5xl: var(--space-32);   /* 128px — max structural gap */
+
+  /* =========================================================================
+     3. CORNER RADIUS — PRIMITIVE
+     All values are multiples of 4px.
+     ========================================================================= */
+  --radius-none: 0px;
+  --radius-sm:   4px;    /*  4px — tight: tags, tooltips */
+  --radius-md:   8px;    /*  8px — standard: inputs, buttons */
+  --radius-lg:   12px;   /* 12px — cards */
+  --radius-xl:   16px;   /* 16px — modals, popovers */
+  --radius-2xl:  24px;   /* 24px — sheets, bottom cards */
+  --radius-3xl:  32px;   /* 32px — feature cards */
+  --radius-pill: 9999px; /* fully rounded — badges, pills */
+  --radius-full: 50%;    /* circle — avatars */
+
+  /* =========================================================================
+     3b. CORNER RADIUS — SEMANTIC ROLES
+     ========================================================================= */
+  --radius-button:  var(--radius-md);
+  --radius-input:   var(--radius-md);
+  --radius-chip:    var(--radius-pill);
+  --radius-badge:   var(--radius-pill);
+  --radius-card:    var(--radius-lg);
+  --radius-modal:   var(--radius-xl);
+  --radius-sheet:   var(--radius-2xl);
+  --radius-avatar:  var(--radius-full);
+  --radius-tooltip: var(--radius-sm);
+
+  /* =========================================================================
+     4. SIZING — COMPONENT HEIGHTS
+     Touch target minimum (Apple HIG / WCAG): 44px = --space-11
+     ========================================================================= */
+
+  /* Buttons */
+  --height-button-xs: var(--space-7);   /* 28px */
+  --height-button-sm: var(--space-8);   /* 32px */
+  --height-button-md: var(--space-10);  /* 40px — default */
+  --height-button-lg: var(--space-12);  /* 48px */
+  --height-button-xl: var(--space-14);  /* 56px */
+
+  /* Inputs (mirror button heights) */
+  --height-input-sm:  var(--space-8);   /* 32px */
+  --height-input-md:  var(--space-10);  /* 40px — default */
+  --height-input-lg:  var(--space-12);  /* 48px */
+
+  /* Other components */
+  --height-chip:    var(--space-6);   /* 24px */
+  --height-badge:   var(--space-5);   /* 20px */
+  --height-touch:   var(--space-11);  /* 44px — min touch target */
+  --height-nav:     var(--space-14);  /* 56px */
+  --height-toolbar: var(--space-12);  /* 48px */
+
+  /* =========================================================================
+     4b. SIZING — ICON SIZES
+     ========================================================================= */
+  --icon-xs:  0.75rem;  /* 12px */
+  --icon-sm:  1rem;     /* 16px */
+  --icon-md:  1.25rem;  /* 20px — default */
+  --icon-lg:  1.5rem;   /* 24px */
+  --icon-xl:  2rem;     /* 32px */
+  --icon-2xl: 3rem;     /* 48px */
+
+  /* =========================================================================
+     4c. SIZING — CONTAINER MAX-WIDTHS
+     ========================================================================= */
+  /* =========================================================================
+     5. BORDER WIDTH TOKENS
+     ========================================================================= */
+  --border-width-thin:   1px;  /* default — most borders */
+  --border-width-normal: 2px;  /* emphasis borders, focus outlines */
+  --border-width-thick:  4px;  /* heavy accent, progress bars */
+
+  /* Semantic roles */
+  --border-width-button: var(--border-width-thin);
+  --border-width-input:  var(--border-width-thin);
+  --border-width-card:   var(--border-width-thin);
+
+  /* =========================================================================
+     4c. SIZING — CONTAINER MAX-WIDTHS
+     ========================================================================= */
+  --container-xs:    20rem;   /* 320px */
+  --container-sm:    40rem;   /* 640px */
+  --container-md:    48rem;   /* 768px */
+  --container-lg:    64rem;   /* 1024px */
+  --container-xl:    80rem;   /* 1280px */
+  --container-2xl:   90rem;   /* 1440px */
+  --container-prose: 65ch;    /* optimal reading width */
+
+}

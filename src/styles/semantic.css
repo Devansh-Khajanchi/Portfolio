@@ -1,0 +1,109 @@
+/* =============================================================================
+   SEMANTIC TOKENS — intent-based aliases
+   Map primitive scales → role-based names for light and dark modes.
+   @theme inline registration is handled in globals.css.
+   ============================================================================= */
+
+@layer base {
+
+  :root {
+    /* Surface */
+    --background:           var(--grey-50);
+    --surface:              #ffffff;
+    --surface-raised:       var(--grey-100);
+    --foreground:           var(--grey-950);
+    --foreground-muted:     var(--grey-500);
+    --border:               var(--grey-200);
+    --border-strong:        var(--grey-400);
+
+    /* Primary — Orange */
+    --primary:              var(--orange-600);
+    --primary-hover:        var(--orange-700);
+    --primary-subtle:       var(--orange-50);
+    --primary-foreground:   #ffffff;
+
+    /* Secondary — Blue */
+    --secondary:            var(--blue-500);
+    --secondary-hover:      var(--blue-600);
+    --secondary-subtle:     var(--blue-50);
+    --secondary-foreground: #ffffff;
+
+    /* Error */
+    --error:                var(--red-600);
+    --error-subtle:         var(--red-50);
+    --error-foreground:     #ffffff;
+
+    /* Success */
+    --success:              var(--green-600);
+    --success-subtle:       var(--green-50);
+    --success-foreground:   #ffffff;
+
+    /* Caution */
+    --caution:              var(--yellow-500);
+    --caution-subtle:       var(--yellow-50);
+    --caution-foreground:   var(--yellow-950);
+
+    /* AI */
+    --ai:                   var(--purple-600);
+    --ai-subtle:            var(--purple-50);
+    --ai-foreground:        #ffffff;
+
+    /* Focus ring */
+    --focus-ring-color:  var(--primary);
+    --focus-ring-width:  2px;
+    --focus-ring-offset: 2px;
+    --focus-ring-style:  solid;
+    --focus-ring:        var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+  }
+
+  .dark {
+    /* Surface */
+    --background:           var(--grey-950);
+    --surface:              var(--grey-900);
+    --surface-raised:       var(--grey-800);
+    --foreground:           var(--grey-50);
+    --foreground-muted:     var(--grey-400);
+    --border:               var(--grey-800);
+    --border-strong:        var(--grey-600);
+
+    /* Primary — Orange */
+    --primary:              var(--orange-400);
+    --primary-hover:        var(--orange-300);
+    --primary-subtle:       var(--orange-950);
+    --primary-foreground:   var(--grey-950);
+
+    /* Secondary — Blue */
+    --secondary:            var(--blue-400);
+    --secondary-hover:      var(--blue-300);
+    --secondary-subtle:     var(--blue-950);
+    --secondary-foreground: var(--grey-950);
+
+    /* Error */
+    --error:                var(--red-400);
+    --error-subtle:         var(--red-950);
+    --error-foreground:     var(--grey-950);
+
+    /* Success */
+    --success:              var(--green-400);
+    --success-subtle:       var(--green-950);
+    --success-foreground:   var(--grey-950);
+
+    /* Caution */
+    --caution:              var(--yellow-300);
+    --caution-subtle:       var(--yellow-950);
+    --caution-foreground:   var(--grey-950);
+
+    /* AI */
+    --ai:                   var(--purple-400);
+    --ai-subtle:            var(--purple-950);
+    --ai-foreground:        var(--grey-950);
+
+    /* Focus ring — brighter in dark mode for visibility */
+    --focus-ring-color:  var(--primary);
+    --focus-ring-width:  2px;
+    --focus-ring-offset: 2px;
+    --focus-ring-style:  solid;
+    --focus-ring:        var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+  }
+
+}

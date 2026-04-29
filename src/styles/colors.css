@@ -1,0 +1,109 @@
+/* =============================================================================
+   PRIMITIVE COLOR SCALES — raw CSS custom properties
+   All colors in OKLCH. 11-step scale (50–950) per hue family.
+   These are referenced by @theme in globals.css to generate Tailwind utilities.
+
+   Hue anchors:
+     Orange  H=35   — Primary brand (#DD3B00 ≈ orange-600)
+     Blue    H=259  — Secondary brand (#0080FF ≈ blue-500)
+     Grey    H=50   — Warm neutral
+     Yellow  H=82   — Caution
+     Red     H=25   — Error / destructive
+     Green   H=145  — Success
+     Purple  H=300  — AI / generative
+   ============================================================================= */
+
+:root {
+
+  /* --- Orange (Primary) --------------------------------------------------- */
+  --orange-50:  oklch(0.98 0.015 35);
+  --orange-100: oklch(0.96 0.033 35);
+  --orange-200: oklch(0.91 0.072 35);
+  --orange-300: oklch(0.84 0.120 35);
+  --orange-400: oklch(0.74 0.168 35);
+  --orange-500: oklch(0.63 0.200 35);
+  --orange-600: oklch(0.54 0.215 35); /* #DD3B00 */
+  --orange-700: oklch(0.45 0.192 35);
+  --orange-800: oklch(0.35 0.152 35);
+  --orange-900: oklch(0.25 0.104 35);
+  --orange-950: oklch(0.16 0.066 35);
+
+  /* --- Blue (Secondary) --------------------------------------------------- */
+  --blue-50:  oklch(0.97 0.015 259);
+  --blue-100: oklch(0.94 0.040 259);
+  --blue-200: oklch(0.89 0.088 259);
+  --blue-300: oklch(0.81 0.148 259);
+  --blue-400: oklch(0.72 0.200 259);
+  --blue-500: oklch(0.60 0.245 259); /* #0080FF */
+  --blue-600: oklch(0.50 0.238 259);
+  --blue-700: oklch(0.41 0.212 259);
+  --blue-800: oklch(0.33 0.168 259);
+  --blue-900: oklch(0.24 0.112 259);
+  --blue-950: oklch(0.16 0.072 259);
+
+  /* --- Grey (Warm Neutral) ------------------------------------------------ */
+  --grey-50:  oklch(0.985 0.002 50);
+  --grey-100: oklch(0.970 0.003 50);
+  --grey-200: oklch(0.932 0.005 50);
+  --grey-300: oklch(0.878 0.007 50);
+  --grey-400: oklch(0.780 0.009 50);
+  --grey-500: oklch(0.648 0.009 50);
+  --grey-600: oklch(0.514 0.009 50);
+  --grey-700: oklch(0.400 0.007 50);
+  --grey-800: oklch(0.298 0.005 50);
+  --grey-900: oklch(0.205 0.003 50);
+  --grey-950: oklch(0.136 0.002 50);
+
+  /* --- Yellow (Caution) --------------------------------------------------- */
+  --yellow-50:  oklch(0.98 0.026 82);
+  --yellow-100: oklch(0.97 0.062 82);
+  --yellow-200: oklch(0.94 0.120 82);
+  --yellow-300: oklch(0.90 0.172 82);
+  --yellow-400: oklch(0.86 0.200 82);
+  --yellow-500: oklch(0.80 0.190 82);
+  --yellow-600: oklch(0.70 0.178 82);
+  --yellow-700: oklch(0.58 0.156 82);
+  --yellow-800: oklch(0.45 0.120 82);
+  --yellow-900: oklch(0.32 0.080 82);
+  --yellow-950: oklch(0.21 0.050 82);
+
+  /* --- Red (Error) -------------------------------------------------------- */
+  --red-50:  oklch(0.97 0.016 25);
+  --red-100: oklch(0.94 0.040 25);
+  --red-200: oklch(0.89 0.082 25);
+  --red-300: oklch(0.82 0.138 25);
+  --red-400: oklch(0.72 0.188 25);
+  --red-500: oklch(0.61 0.220 25);
+  --red-600: oklch(0.51 0.220 25);
+  --red-700: oklch(0.42 0.198 25);
+  --red-800: oklch(0.33 0.154 25);
+  --red-900: oklch(0.24 0.104 25);
+  --red-950: oklch(0.16 0.066 25);
+
+  /* --- Green (Success) ---------------------------------------------------- */
+  --green-50:  oklch(0.97 0.020 145);
+  --green-100: oklch(0.95 0.050 145);
+  --green-200: oklch(0.90 0.092 145);
+  --green-300: oklch(0.83 0.140 145);
+  --green-400: oklch(0.74 0.172 145);
+  --green-500: oklch(0.64 0.190 145);
+  --green-600: oklch(0.54 0.188 145);
+  --green-700: oklch(0.45 0.168 145);
+  --green-800: oklch(0.35 0.128 145);
+  --green-900: oklch(0.26 0.084 145);
+  --green-950: oklch(0.17 0.052 145);
+
+  /* --- Purple (AI) -------------------------------------------------------- */
+  --purple-50:  oklch(0.97 0.016 300);
+  --purple-100: oklch(0.94 0.040 300);
+  --purple-200: oklch(0.89 0.082 300);
+  --purple-300: oklch(0.81 0.138 300);
+  --purple-400: oklch(0.72 0.188 300);
+  --purple-500: oklch(0.62 0.222 300);
+  --purple-600: oklch(0.53 0.228 300);
+  --purple-700: oklch(0.44 0.202 300);
+  --purple-800: oklch(0.35 0.154 300);
+  --purple-900: oklch(0.26 0.102 300);
+  --purple-950: oklch(0.17 0.064 300);
+
+}
