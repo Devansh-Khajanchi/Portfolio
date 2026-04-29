@@ -67,43 +67,36 @@
     --border-strong:        var(--grey-600);
 
     /* Primary — Orange */
-    --primary:              var(--orange-400);
-    --primary-hover:        var(--orange-300);
+    --primary:              var(--orange-500);
+    --primary-hover:        var(--orange-400);
     --primary-subtle:       var(--orange-950);
-    --primary-foreground:   var(--grey-950);
+    --primary-foreground:   #ffffff;
 
     /* Secondary — Blue */
-    --secondary:            var(--blue-400);
-    --secondary-hover:      var(--blue-300);
+    --secondary:            var(--blue-500);
+    --secondary-hover:      var(--blue-400);
     --secondary-subtle:     var(--blue-950);
-    --secondary-foreground: var(--grey-950);
+    --secondary-foreground: #ffffff;
 
     /* Error */
-    --error:                var(--red-400);
+    --error:                var(--red-500);
     --error-subtle:         var(--red-950);
-    --error-foreground:     var(--grey-950);
+    --error-foreground:     #ffffff;
 
     /* Success */
-    --success:              var(--green-400);
+    --success:              var(--green-500);
     --success-subtle:       var(--green-950);
-    --success-foreground:   var(--grey-950);
+    --success-foreground:   #ffffff;
 
     /* Caution */
-    --caution:              var(--yellow-300);
+    --caution:              var(--yellow-400);
     --caution-subtle:       var(--yellow-950);
     --caution-foreground:   var(--grey-950);
 
     /* AI */
-    --ai:                   var(--purple-400);
+    --ai:                   var(--purple-500);
     --ai-subtle:            var(--purple-950);
-    --ai-foreground:        var(--grey-950);
-
-    /* Focus ring — brighter in dark mode for visibility */
-    --focus-ring-color:  var(--primary);
-    --focus-ring-width:  2px;
-    --focus-ring-offset: 2px;
-    --focus-ring-style:  solid;
-    --focus-ring:        var(--focus-ring-width) var(--focus-ring-style) var(--focus-ring-color);
+    --ai-foreground:        #ffffff;
   }
 
 }

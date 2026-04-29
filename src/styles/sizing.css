@@ -125,6 +125,14 @@
   /* =========================================================================
      4c. SIZING — CONTAINER MAX-WIDTHS
      ========================================================================= */
+  --container-xs:    20rem;   /* 320px */
+  --container-sm:    40rem;   /* 640px */
+  --container-md:    48rem;   /* 768px */
+  --container-lg:    64rem;   /* 1024px */
+  --container-xl:    80rem;   /* 1280px */
+  --container-2xl:   90rem;   /* 1440px */
+  --container-prose: 65ch;    /* optimal reading width */
+
   /* =========================================================================
      5. BORDER WIDTH TOKENS
      ========================================================================= */
@@ -136,16 +144,5 @@
   --border-width-button: var(--border-width-thin);
   --border-width-input:  var(--border-width-thin);
   --border-width-card:   var(--border-width-thin);
-
-  /* =========================================================================
-     4c. SIZING — CONTAINER MAX-WIDTHS
-     ========================================================================= */
-  --container-xs:    20rem;   /* 320px */
-  --container-sm:    40rem;   /* 640px */
-  --container-md:    48rem;   /* 768px */
-  --container-lg:    64rem;   /* 1024px */
-  --container-xl:    80rem;   /* 1280px */
-  --container-2xl:   90rem;   /* 1440px */
-  --container-prose: 65ch;    /* optimal reading width */
 
 }

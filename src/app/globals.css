@@ -98,6 +98,19 @@
   --color-green-900: oklch(0.26 0.084 145);
   --color-green-950: oklch(0.17 0.052 145);
 
+  /* Purple (AI) */
+  --color-purple-50:  oklch(0.97 0.016 300);
+  --color-purple-100: oklch(0.94 0.040 300);
+  --color-purple-200: oklch(0.89 0.082 300);
+  --color-purple-300: oklch(0.81 0.138 300);
+  --color-purple-400: oklch(0.72 0.188 300);
+  --color-purple-500: oklch(0.62 0.222 300);
+  --color-purple-600: oklch(0.53 0.228 300);
+  --color-purple-700: oklch(0.44 0.202 300);
+  --color-purple-800: oklch(0.35 0.154 300);
+  --color-purple-900: oklch(0.26 0.102 300);
+  --color-purple-950: oklch(0.17 0.064 300);
+
   /* Z-index scale — Tailwind z-* utilities */
   --z-index-base:     0;
   --z-index-raised:   10;
@@ -147,19 +160,6 @@
   --spacing-72: 18rem;     /* 288px */
   --spacing-80: 20rem;     /* 320px */
   --spacing-96: 24rem;     /* 384px */
-
-  /* Purple (AI) */
-  --color-purple-50:  oklch(0.97 0.016 300);
-  --color-purple-100: oklch(0.94 0.040 300);
-  --color-purple-200: oklch(0.89 0.082 300);
-  --color-purple-300: oklch(0.81 0.138 300);
-  --color-purple-400: oklch(0.72 0.188 300);
-  --color-purple-500: oklch(0.62 0.222 300);
-  --color-purple-600: oklch(0.53 0.228 300);
-  --color-purple-700: oklch(0.44 0.202 300);
-  --color-purple-800: oklch(0.35 0.154 300);
-  --color-purple-900: oklch(0.26 0.102 300);
-  --color-purple-950: oklch(0.17 0.064 300);
 
 }
 
