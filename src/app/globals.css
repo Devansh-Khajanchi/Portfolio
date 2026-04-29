@@ -20,31 +20,31 @@
 /* --- 1. Primitive color palette ------------------------------------------- */
 @theme {
 
-  /* Orange (Primary) */
-  --color-orange-50:  oklch(0.98 0.015 35);
-  --color-orange-100: oklch(0.96 0.033 35);
-  --color-orange-200: oklch(0.91 0.072 35);
-  --color-orange-300: oklch(0.84 0.120 35);
-  --color-orange-400: oklch(0.74 0.168 35);
-  --color-orange-500: oklch(0.63 0.200 35);
-  --color-orange-600: oklch(0.54 0.215 35); /* #DD3B00 */
-  --color-orange-700: oklch(0.45 0.192 35);
-  --color-orange-800: oklch(0.35 0.152 35);
-  --color-orange-900: oklch(0.25 0.104 35);
-  --color-orange-950: oklch(0.16 0.066 35);
+  /* Orange (Primary) — anchor: orange-600 = #DD3B00 */
+  --color-orange-50:  oklch(0.98   0.015  35.51);
+  --color-orange-100: oklch(0.96   0.033  35.51);
+  --color-orange-200: oklch(0.91   0.072  35.51);
+  --color-orange-300: oklch(0.84   0.120  35.51);
+  --color-orange-400: oklch(0.74   0.168  35.51);
+  --color-orange-500: oklch(0.63   0.200  35.51);
+  --color-orange-600: oklch(0.5930 0.2055 35.51); /* #DD3B00 */
+  --color-orange-700: oklch(0.45   0.192  35.51);
+  --color-orange-800: oklch(0.35   0.152  35.51);
+  --color-orange-900: oklch(0.25   0.104  35.51);
+  --color-orange-950: oklch(0.16   0.066  35.51);
 
-  /* Blue (Secondary) */
-  --color-blue-50:  oklch(0.97 0.015 259);
-  --color-blue-100: oklch(0.94 0.040 259);
-  --color-blue-200: oklch(0.89 0.088 259);
-  --color-blue-300: oklch(0.81 0.148 259);
-  --color-blue-400: oklch(0.72 0.200 259);
-  --color-blue-500: oklch(0.60 0.245 259); /* #0080FF */
-  --color-blue-600: oklch(0.50 0.238 259);
-  --color-blue-700: oklch(0.41 0.212 259);
-  --color-blue-800: oklch(0.33 0.168 259);
-  --color-blue-900: oklch(0.24 0.112 259);
-  --color-blue-950: oklch(0.16 0.072 259);
+  /* Blue (Secondary) — anchor: blue-500 = #0080FF */
+  --color-blue-50:  oklch(0.97   0.015  256.10);
+  --color-blue-100: oklch(0.94   0.040  256.10);
+  --color-blue-200: oklch(0.89   0.088  256.10);
+  --color-blue-300: oklch(0.81   0.148  256.10);
+  --color-blue-400: oklch(0.72   0.200  256.10);
+  --color-blue-500: oklch(0.6152 0.2108 256.10); /* #0080FF */
+  --color-blue-600: oklch(0.50   0.238  256.10);
+  --color-blue-700: oklch(0.41   0.212  256.10);
+  --color-blue-800: oklch(0.33   0.168  256.10);
+  --color-blue-900: oklch(0.24   0.112  256.10);
+  --color-blue-950: oklch(0.16   0.072  256.10);
 
   /* Grey (Warm Neutral) */
   --color-grey-50:  oklch(0.985 0.002 50);
