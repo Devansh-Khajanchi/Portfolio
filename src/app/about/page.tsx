@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 
 const skills = [
   "UI/UX Design",
@@ -60,21 +61,11 @@ export default function About() {
             <strong className="text-foreground font-semibold">Hero Motocorp</strong>. Devansh&apos;s practice is rooted in accessibility, clarity, and design that bridges the physical and digital to create meaningful experiences for users.
           </p>
 
-          <a
-            href="mailto:devanshkh@gmail.com"
-            className="inline-flex items-center justify-center self-start no-underline mt-4 md:mt-8"
-            style={{
-              background: "var(--primary)",
-              color: "var(--primary-foreground)",
-              height: "var(--height-button-md)",
-              padding: "0 var(--space-lg)",
-              borderRadius: "var(--radius-button)",
-              fontSize: "var(--text-label)",
-              fontWeight: "var(--weight-semibold)",
-            }}
-          >
-            Let&apos;s Chat
-          </a>
+          <div className="mt-4 md:mt-8">
+            <Button href="mailto:devanshkh@gmail.com" variant="primary">
+              Let&apos;s Chat
+            </Button>
+          </div>
         </div>
 
         <div>

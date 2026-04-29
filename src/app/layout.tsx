@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
 import Nav from "@/components/ui/Nav";
+import Footer from "@/components/ui/Footer";
 import AgentationWrapper from "@/components/ui/AgentationWrapper";
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 import "./globals.css";
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <Nav />
         <main>{children}</main>
+        <Footer />
         <AgentationWrapper />
         <DarkModeToggle />
       </body>

@@ -4,106 +4,109 @@
    These are referenced by @theme in globals.css to generate Tailwind utilities.
 
    Hue anchors:
-     Orange  H=35   — Primary brand (#DD3B00 ≈ orange-600)
-     Blue    H=259  — Secondary brand (#0080FF ≈ blue-500)
+     Orange  H=35   — Primary brand (target #DD3B00)
+     Blue    H=259  — Secondary brand (target #0080FF)
      Grey    H=50   — Warm neutral
      Yellow  H=82   — Caution
      Red     H=25   — Error / destructive
      Green   H=145  — Success
      Purple  H=300  — AI / generative
+
+   Hex comments are computed from the OKLCH triple via CSS Color Module 4 math.
+   They reflect the actual rendered sRGB output (browsers may clip on out-of-gamut).
    ============================================================================= */
 
 :root {
 
   /* --- Orange (Primary) --------------------------------------------------- */
-  --orange-50:  oklch(0.98 0.015 35);
-  --orange-100: oklch(0.96 0.033 35);
-  --orange-200: oklch(0.91 0.072 35);
-  --orange-300: oklch(0.84 0.120 35);
-  --orange-400: oklch(0.74 0.168 35);
-  --orange-500: oklch(0.63 0.200 35);
-  --orange-600: oklch(0.54 0.215 35); /* #DD3B00 */
-  --orange-700: oklch(0.45 0.192 35);
-  --orange-800: oklch(0.35 0.152 35);
-  --orange-900: oklch(0.25 0.104 35);
-  --orange-950: oklch(0.16 0.066 35);
+  --orange-50:  oklch(0.98 0.015 35);    /* #FFF5F2 */
+  --orange-100: oklch(0.96 0.033 35);    /* #FFEBE3 */
+  --orange-200: oklch(0.91 0.072 35);    /* #FFD1C1 */
+  --orange-300: oklch(0.84 0.120 35);    /* #FFAE95 */
+  --orange-400: oklch(0.74 0.168 35);    /* #FF7E5E */
+  --orange-500: oklch(0.63 0.200 35);    /* #E84C23 */
+  --orange-600: oklch(0.54 0.215 35);    /* #CE1900  (brand target #DD3B00) */
+  --orange-700: oklch(0.45 0.192 35);    /* #A50000 */
+  --orange-800: oklch(0.35 0.152 35);    /* #760000 */
+  --orange-900: oklch(0.25 0.104 35);    /* #470100 */
+  --orange-950: oklch(0.16 0.066 35);    /* #230000 */
 
   /* --- Blue (Secondary) --------------------------------------------------- */
-  --blue-50:  oklch(0.97 0.015 259);
-  --blue-100: oklch(0.94 0.040 259);
-  --blue-200: oklch(0.89 0.088 259);
-  --blue-300: oklch(0.81 0.148 259);
-  --blue-400: oklch(0.72 0.200 259);
-  --blue-500: oklch(0.60 0.245 259); /* #0080FF */
-  --blue-600: oklch(0.50 0.238 259);
-  --blue-700: oklch(0.41 0.212 259);
-  --blue-800: oklch(0.33 0.168 259);
-  --blue-900: oklch(0.24 0.112 259);
-  --blue-950: oklch(0.16 0.072 259);
+  --blue-50:  oklch(0.97 0.015 259);     /* #EFF6FF */
+  --blue-100: oklch(0.94 0.040 259);     /* #DBECFF */
+  --blue-200: oklch(0.89 0.088 259);     /* #B8DDFF */
+  --blue-300: oklch(0.81 0.148 259);     /* #85C1FF */
+  --blue-400: oklch(0.72 0.200 259);     /* #4FA1FF */
+  --blue-500: oklch(0.60 0.245 259);     /* #0074FF  (brand target #0080FF) */
+  --blue-600: oklch(0.50 0.238 259);     /* #0053E6 */
+  --blue-700: oklch(0.41 0.212 259);     /* #0039B9 */
+  --blue-800: oklch(0.33 0.168 259);     /* #002989 */
+  --blue-900: oklch(0.24 0.112 259);     /* #001953 */
+  --blue-950: oklch(0.16 0.072 259);     /* #000A2B */
 
   /* --- Grey (Warm Neutral) ------------------------------------------------ */
-  --grey-50:  oklch(0.985 0.002 50);
-  --grey-100: oklch(0.970 0.003 50);
-  --grey-200: oklch(0.932 0.005 50);
-  --grey-300: oklch(0.878 0.007 50);
-  --grey-400: oklch(0.780 0.009 50);
-  --grey-500: oklch(0.648 0.009 50);
-  --grey-600: oklch(0.514 0.009 50);
-  --grey-700: oklch(0.400 0.007 50);
-  --grey-800: oklch(0.298 0.005 50);
-  --grey-900: oklch(0.205 0.003 50);
-  --grey-950: oklch(0.136 0.002 50);
+  --grey-50:  oklch(0.985 0.002 50);     /* #FBFAF9 */
+  --grey-100: oklch(0.970 0.003 50);     /* #F7F4F3 */
+  --grey-200: oklch(0.932 0.005 50);     /* #EBE8E6 */
+  --grey-300: oklch(0.878 0.007 50);     /* #DBD6D3 */
+  --grey-400: oklch(0.780 0.009 50);     /* #BCB6B2 */
+  --grey-500: oklch(0.648 0.009 50);     /* #938D8A */
+  --grey-600: oklch(0.514 0.009 50);     /* #6C6663 */
+  --grey-700: oklch(0.400 0.007 50);     /* #4B4744 */
+  --grey-800: oklch(0.298 0.005 50);     /* #2F2D2B */
+  --grey-900: oklch(0.205 0.003 50);     /* #181716 */
+  --grey-950: oklch(0.136 0.002 50);     /* #090808 */
 
   /* --- Yellow (Caution) --------------------------------------------------- */
-  --yellow-50:  oklch(0.98 0.026 82);
-  --yellow-100: oklch(0.97 0.062 82);
-  --yellow-200: oklch(0.94 0.120 82);
-  --yellow-300: oklch(0.90 0.172 82);
-  --yellow-400: oklch(0.86 0.200 82);
-  --yellow-500: oklch(0.80 0.190 82);
-  --yellow-600: oklch(0.70 0.178 82);
-  --yellow-700: oklch(0.58 0.156 82);
-  --yellow-800: oklch(0.45 0.120 82);
-  --yellow-900: oklch(0.32 0.080 82);
-  --yellow-950: oklch(0.21 0.050 82);
+  --yellow-50:  oklch(0.98 0.026 82);    /* #FFF7E5 */
+  --yellow-100: oklch(0.97 0.062 82);    /* #FFF2C6 */
+  --yellow-200: oklch(0.94 0.120 82);    /* #FFE48A */
+  --yellow-300: oklch(0.90 0.172 82);    /* #FFD137 */
+  --yellow-400: oklch(0.86 0.200 82);    /* #FFC000 */
+  --yellow-500: oklch(0.80 0.190 82);    /* #F9AE00 */
+  --yellow-600: oklch(0.70 0.178 82);    /* #D49000 */
+  --yellow-700: oklch(0.58 0.156 82);    /* #A76D00 */
+  --yellow-800: oklch(0.45 0.120 82);    /* #764C00 */
+  --yellow-900: oklch(0.32 0.080 82);    /* #472D00 */
+  --yellow-950: oklch(0.21 0.050 82);    /* #241500 */
 
   /* --- Red (Error) -------------------------------------------------------- */
-  --red-50:  oklch(0.97 0.016 25);
-  --red-100: oklch(0.94 0.040 25);
-  --red-200: oklch(0.89 0.082 25);
-  --red-300: oklch(0.82 0.138 25);
-  --red-400: oklch(0.72 0.188 25);
-  --red-500: oklch(0.61 0.220 25);
-  --red-600: oklch(0.51 0.220 25);
-  --red-700: oklch(0.42 0.198 25);
-  --red-800: oklch(0.33 0.154 25);
-  --red-900: oklch(0.24 0.104 25);
-  --red-950: oklch(0.16 0.066 25);
+  --red-50:  oklch(0.97 0.016 25);       /* #FFF1F0 */
+  --red-100: oklch(0.94 0.040 25);       /* #FFE2DE */
+  --red-200: oklch(0.89 0.082 25);       /* #FFC6C0 */
+  --red-300: oklch(0.82 0.138 25);       /* #FF9F96 */
+  --red-400: oklch(0.72 0.188 25);       /* #FF6B66 */
+  --red-500: oklch(0.61 0.220 25);       /* #EA3037 */
+  --red-600: oklch(0.51 0.220 25);       /* #C50015 */
+  --red-700: oklch(0.42 0.198 25);       /* #9D0000 */
+  --red-800: oklch(0.33 0.154 25);       /* #700001 */
+  --red-900: oklch(0.24 0.104 25);       /* #440003 */
+  --red-950: oklch(0.16 0.066 25);       /* #230001 */
 
   /* --- Green (Success) ---------------------------------------------------- */
-  --green-50:  oklch(0.97 0.020 145);
-  --green-100: oklch(0.95 0.050 145);
-  --green-200: oklch(0.90 0.092 145);
-  --green-300: oklch(0.83 0.140 145);
-  --green-400: oklch(0.74 0.172 145);
-  --green-500: oklch(0.64 0.190 145);
-  --green-600: oklch(0.54 0.188 145);
-  --green-700: oklch(0.45 0.168 145);
-  --green-800: oklch(0.35 0.128 145);
-  --green-900: oklch(0.26 0.084 145);
-  --green-950: oklch(0.17 0.052 145);
+  --green-50:  oklch(0.97 0.020 145);    /* #EDF9ED */
+  --green-100: oklch(0.95 0.050 145);    /* #DBF8DA */
+  --green-200: oklch(0.90 0.092 145);    /* #B8EFB9 */
+  --green-300: oklch(0.83 0.140 145);    /* #8ADF8D */
+  --green-400: oklch(0.74 0.172 145);    /* #59C661 */
+  --green-500: oklch(0.64 0.190 145);    /* #1FA836 */
+  --green-600: oklch(0.54 0.188 145);    /* #00880E */
+  --green-700: oklch(0.45 0.168 145);    /* #006B00 */
+  --green-800: oklch(0.35 0.128 145);    /* #004A00 */
+  --green-900: oklch(0.26 0.084 145);    /* #002E05 */
+  --green-950: oklch(0.17 0.052 145);    /* #001502 */
 
   /* --- Purple (AI) -------------------------------------------------------- */
-  --purple-50:  oklch(0.97 0.016 300);
-  --purple-100: oklch(0.94 0.040 300);
-  --purple-200: oklch(0.89 0.082 300);
-  --purple-300: oklch(0.81 0.138 300);
-  --purple-400: oklch(0.72 0.188 300);
-  --purple-500: oklch(0.62 0.222 300);
-  --purple-600: oklch(0.53 0.228 300);
-  --purple-700: oklch(0.44 0.202 300);
-  --purple-800: oklch(0.35 0.154 300);
-  --purple-900: oklch(0.26 0.102 300);
-  --purple-950: oklch(0.17 0.064 300);
+  --purple-50:  oklch(0.97 0.016 300);   /* #F6F3FF */
+  --purple-100: oklch(0.94 0.040 300);   /* #EFE6FF */
+  --purple-200: oklch(0.89 0.082 300);   /* #E3CFFF */
+  --purple-300: oklch(0.81 0.138 300);   /* #CFACFF */
+  --purple-400: oklch(0.72 0.188 300);   /* #B884FF */
+  --purple-500: oklch(0.62 0.222 300);   /* #9D5AF5 */
+  --purple-600: oklch(0.53 0.228 300);   /* #8438D8 */
+  --purple-700: oklch(0.44 0.202 300);   /* #6723AE */
+  --purple-800: oklch(0.35 0.154 300);   /* #491A7C */
+  --purple-900: oklch(0.26 0.102 300);   /* #2D124D */
+  --purple-950: oklch(0.17 0.064 300);   /* #140626 */
 
 }
