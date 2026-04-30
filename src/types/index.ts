@@ -24,3 +24,31 @@ export type CreativeWork = {
   imageUrl: string;
   description?: string;
 };
+
+export type GalleryImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+export type PortfolioLink = {
+  label: string;
+  href: string;
+};
+
+export type PortfolioProject = {
+  slug: string;
+  title: string;
+  year: string;
+  role: string;
+  client?: string;
+  tools?: string[];
+  timeline?: string;
+  summary: string;
+  heroImage?: string;
+  problem: string;
+  process: string;
+  outcome: string;
+  gallery: GalleryImage[];
+  links?: PortfolioLink[];
+};

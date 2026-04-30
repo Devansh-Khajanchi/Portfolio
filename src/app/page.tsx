@@ -1,27 +1,12 @@
 import Link from "next/link";
+import ProjectGrid from "@/components/sections/ProjectGrid";
 
-const sections = [
-  { href: "/design",   label: "Work",     description: "Product design, systems, and visual work" },
-  { href: "/projects", label: "Projects", description: "Coded apps, tools, and GitHub" },
-  { href: "/creative", label: "Play",     description: "Photography, motion, and side experiments" },
-  { href: "/about",    label: "About",    description: "Background, process, and contact" },
-] as const;
-
-/**
- * 4-item 2-col grid border map:
- *   [0][1]
- *   [2][3]
- * Mobile (1 col): bottom border on 0,1,2
- * md+ (2 col):    bottom border on 0,1; right border on 0,2
- */
-function itemBorderClass(i: number): string {
-  const c: string[] = [];
-  if (i < 3)        c.push("border-b border-border");           // mobile bottom rule
-  if (i % 2 === 0)  c.push("md:border-r");                       // md+ left column
-  if (i < 2)        c.push("md:border-b");                       // md+ top row
-  else if (i === 2) c.push("md:border-b-0");                     // md+: undo mobile bottom
-  return c.join(" ");
-}
+const secondaryLinks = [
+  { href: "/creative", label: "Play",   external: false },
+  { href: "/about",    label: "About",  external: false },
+  { href: "https://github.com/Devansh-Khajanchi", label: "GitHub", external: true },
+  { href: "/devansh-khajanchi-resume-2026.pdf",   label: "Resume", external: true },
+];
 
 export default function Home() {
   return (
@@ -30,7 +15,6 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="flex flex-col justify-end min-h-[calc(85vh-var(--height-nav))] px-6 md:px-8 lg:px-12 pb-10 md:pb-16 lg:pb-20 gap-8 md:gap-10 border-b border-border">
         <h1
-          className="text-foreground"
           style={{
             fontSize: "var(--text-display)",
             fontWeight: "var(--weight-display)",
@@ -38,11 +22,8 @@ export default function Home() {
             letterSpacing: "var(--tracking-display)",
           }}
         >
-          Building AI-driven<br />
-          Products{" "}
-          <span style={{ color: "var(--secondary)" }}>+</span>
-          {" "}Experiences
-          <span style={{ color: "var(--primary)" }}>.</span>
+          <span className="block text-foreground-muted">Devansh Khajanchi</span>
+          <span className="block text-foreground">Designer at Noise.xyz</span>
         </h1>
 
         <div className="flex flex-col md:flex-row gap-3 md:gap-20 lg:gap-32">
@@ -62,32 +43,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Section index ────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-2">
-        {sections.map(({ href, label, description }, i) => (
-          <Link
-            key={href}
-            href={href}
-            className={`block px-6 md:px-8 lg:px-12 py-8 md:py-10 lg:py-12 no-underline text-foreground ${itemBorderClass(i)}`}
-          >
-            <h2
-              className="mb-3"
-              style={{
-                fontSize: "var(--text-h3)",
-                fontWeight: "var(--weight-h3)",
-                lineHeight: "var(--leading-h3)",
-              }}
+      {/* ── Selected work ────────────────────────────────── */}
+      <ProjectGrid />
+
+      {/* ── Secondary links ──────────────────────────────── */}
+      <section className="px-6 md:px-8 lg:px-12 py-8 md:py-10 border-t border-border flex flex-wrap items-center gap-x-6 gap-y-3">
+        {secondaryLinks.map(({ href, label, external }) =>
+          external ? (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="text-foreground-muted no-underline hover:text-foreground"
+              style={{ fontSize: "var(--text-body-sm)" }}
             >
               {label}
-            </h2>
-            <p
-              className="text-foreground-muted"
-              style={{ fontSize: "var(--text-body-sm)", lineHeight: "var(--leading-body-sm)" }}
+            </a>
+          ) : (
+            <Link
+              key={label}
+              href={href}
+              className="text-foreground-muted no-underline hover:text-foreground"
+              style={{ fontSize: "var(--text-body-sm)" }}
             >
-              {description}
-            </p>
-          </Link>
-        ))}
+              {label}
+            </Link>
+          ),
+        )}
       </section>
 
     </div>

@@ -4,6 +4,7 @@ import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import AgentationWrapper from "@/components/ui/AgentationWrapper";
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
+import ThemeScript from "@/components/ui/ThemeScript";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -28,7 +29,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${geistMono.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${dmSans.variable} ${geistMono.variable} antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <ThemeScript />
+      </head>
       <body>
         <Nav />
         <main>{children}</main>
