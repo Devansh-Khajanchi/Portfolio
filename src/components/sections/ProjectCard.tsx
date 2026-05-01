@@ -33,7 +33,7 @@ export default function ProjectCard({
       className={`group flex h-full flex-col no-underline text-foreground ${className}`}
     >
       <div
-        className={`relative overflow-hidden rounded-[var(--radius-2xl)] bg-[var(--grey-200)] dark:bg-[var(--grey-800)] transition-opacity duration-200 group-hover:opacity-95 ${visualClassName}`}
+        className={`relative overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--grey-200)] dark:border-[var(--grey-800)] bg-[var(--grey-200)] dark:bg-[var(--grey-800)] transition-opacity duration-200 group-hover:opacity-95 ${visualClassName}`}
       >
         {media ? (
           isVideoSrc(media) ? (
