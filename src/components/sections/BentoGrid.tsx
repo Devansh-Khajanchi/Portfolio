@@ -16,6 +16,11 @@ const layout: Record<string, string> = {
     "md:col-start-1 md:col-end-5 md:row-start-4 md:row-end-5",
 };
 
+const wideSlugs = new Set(["vida-mobile", "descend"]);
+
+const aspectClass = (slug: string) =>
+  wideSlugs.has(slug) ? "w-full aspect-[4/3]" : "w-full aspect-[3/2]";
+
 export default function BentoGrid() {
   const projects = getNonFeaturedProjects();
 
@@ -34,7 +39,7 @@ export default function BentoGrid() {
           key={project.slug}
           project={project}
           className={layout[project.slug] ?? ""}
-          visualClassName="w-full aspect-[3/2]"
+          visualClassName={aspectClass(project.slug)}
         />
       ))}
     </section>
