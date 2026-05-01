@@ -59,7 +59,7 @@ export const projects: PortfolioProject[] = [
     year: "",
     role: "",
     summary:
-      "A redesigned visual identity and motion graphics system for The Louvre, Paris",
+      "A visual identity and motion graphics system for The Louvre, Paris",
     cardImage: "/assets/images/projects/musee-du-louvre/cover.mp4",
     problem: "",
     process: "",
