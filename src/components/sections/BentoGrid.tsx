@@ -26,7 +26,7 @@ export default function BentoGrid() {
         pb-16 md:pb-24
         grid gap-y-10 md:gap-x-6 md:gap-y-12
         grid-cols-1
-        md:grid-cols-12 md:grid-rows-[repeat(4,minmax(180px,1fr))]
+        md:grid-cols-12
       "
     >
       {projects.map((project) => (
@@ -34,7 +34,7 @@ export default function BentoGrid() {
           key={project.slug}
           project={project}
           className={layout[project.slug] ?? ""}
-          visualClassName="flex-1 min-h-[200px] md:min-h-0"
+          visualClassName="w-full aspect-[3/2]"
         />
       ))}
     </section>
