@@ -53,7 +53,7 @@ export default function ProjectCard({
           )
         ) : null}
       </div>
-      <div className="mt-4 md:mt-6">
+      <div className="mt-3">
         <h2
           style={{
             fontSize: "var(--text-h4)",

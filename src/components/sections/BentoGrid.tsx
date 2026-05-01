@@ -29,7 +29,7 @@ export default function BentoGrid() {
       className="
         px-6 md:px-8 lg:px-12
         pb-16 md:pb-24
-        grid gap-y-10 md:gap-x-6 md:gap-y-12
+        grid gap-y-6 md:gap-x-6 md:gap-y-3
         grid-cols-1
         md:grid-cols-12
       "
