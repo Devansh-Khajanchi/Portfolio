@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 
 type Variant = "filled" | "primary";
 type Size = "sm" | "md" | "lg";
@@ -9,14 +9,17 @@ type ButtonProps = {
   variant?: Variant;
   size?: Size;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent) => void;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
   className?: string;
 };
 
 const variantClasses: Record<Variant, string> = {
-  filled:  "bg-foreground text-background hover:opacity-90",
-  primary: "bg-primary text-primary-foreground hover:bg-primary-hover",
+  filled:
+    "bg-foreground text-background hover:opacity-90 active:opacity-75",
+  primary:
+    "bg-primary text-primary-foreground hover:bg-primary-hover active:brightness-90",
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -26,7 +29,11 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center w-full sm:w-auto sm:min-w-48 rounded-md font-semibold no-underline transition-colors cursor-pointer";
+  "inline-flex items-center justify-center w-full sm:w-auto sm:min-w-48 rounded-xl font-semibold no-underline transition-all cursor-pointer select-none";
+
+const disabledClasses =
+  "disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none " +
+  "aria-disabled:opacity-40 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none";
 
 export default function Button({
   children,
@@ -35,11 +42,12 @@ export default function Button({
   href,
   onClick,
   type = "button",
+  disabled = false,
   className = "",
 }: ButtonProps) {
-  const cls = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`.trim();
+  const cls = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${disabledClasses} ${className}`.trim();
 
-  if (href) {
+  if (href && !disabled) {
     const isInternal = href.startsWith("/") || href.startsWith("#");
     if (isInternal) {
       return (
@@ -63,7 +71,12 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={cls}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={cls}
+    >
       {children}
     </button>
   );

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { List, X } from "@phosphor-icons/react";
+import { AnimatePresence, motion } from "motion/react";
 
 type NavLink = { href: string; label: string; external?: boolean };
 
@@ -14,6 +15,8 @@ const navLinks: NavLink[] = [
   { href: "/about",                                 label: "About" },
   { href: "/devansh-khajanchi-resume-2026.pdf",     label: "Resume", external: true },
 ];
+
+const SNAPPY_EASE = [0.32, 0.72, 0, 1] as const;
 
 export default function Nav() {
   const pathname = usePathname();
@@ -73,36 +76,54 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* ── Mobile menu ─────────────────────────────────────────────── */}
-      {open && (
-        <div className="fixed inset-x-0 top-[var(--height-nav)] bottom-0 z-overlay bg-white dark:bg-black flex flex-col px-6 pt-10 pb-8 md:hidden">
-          <div className="flex flex-col gap-6">
-            {navLinks.map(({ href, label, external }) =>
-              external ? (
-                <a
+      {/* ── Mobile drawer — slides in from the right ────────────────── */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="drawer"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3, ease: SNAPPY_EASE }}
+            className="fixed inset-x-0 top-[var(--height-nav)] bottom-0 z-overlay bg-white dark:bg-black flex flex-col px-6 pt-10 pb-8 md:hidden"
+          >
+            <div className="flex flex-col gap-6">
+              {navLinks.map(({ href, label, external }, i) => (
+                <motion.div
                   key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="no-underline text-4xl font-bold tracking-tight leading-none text-foreground"
+                  initial={{ x: 40, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{
+                    delay: 0.12 + i * 0.04,
+                    duration: 0.22,
+                    ease: SNAPPY_EASE,
+                  }}
                 >
-                  {label}
-                </a>
-              ) : (
-                <Link
-                  key={label}
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className={`no-underline text-4xl font-bold tracking-tight leading-none ${isActive(href) ? "text-primary" : "text-foreground"}`}
-                >
-                  {label}
-                </Link>
-              ),
-            )}
-          </div>
-        </div>
-      )}
+                  {external ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                      className="no-underline text-4xl font-bold tracking-tight leading-none text-foreground"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className={`no-underline text-4xl font-bold tracking-tight leading-none ${isActive(href) ? "text-primary" : "text-foreground"}`}
+                    >
+                      {label}
+                    </Link>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

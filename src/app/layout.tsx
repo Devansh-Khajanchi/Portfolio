@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Sans, Geist_Mono } from "next/font/google";
+import { DM_Sans, EB_Garamond, Geist_Mono } from "next/font/google";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import AgentationWrapper from "@/components/ui/AgentationWrapper";
-import DarkModeToggle from "@/components/ui/DarkModeToggle";
 import ThemeScript from "@/components/ui/ThemeScript";
 import "./globals.css";
 
@@ -16,6 +15,12 @@ const dmSans = DM_Sans({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+});
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-eb-garamond",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${geistMono.variable} antialiased`}
+      className={`${dmSans.variable} ${geistMono.variable} ${ebGaramond.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -42,7 +47,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <AgentationWrapper />
-        <DarkModeToggle />
       </body>
     </html>
   );

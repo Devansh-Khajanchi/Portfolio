@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { Sun, Moon } from "@phosphor-icons/react";
 
 function subscribe(callback: () => void): () => void {
   const observer = new MutationObserver(callback);
@@ -16,7 +17,7 @@ const getClientSnapshot = () =>
 
 const getServerSnapshot = () => true;
 
-export default function DarkModeToggle() {
+export default function DarkModeToggle({ className = "" }: { className?: string }) {
   const dark = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
 
   const toggle = () => {
@@ -32,24 +33,10 @@ export default function DarkModeToggle() {
   return (
     <button
       onClick={toggle}
-      style={{
-        position: "fixed",
-        bottom: 24,
-        right: 24,
-        zIndex: 9999,
-        padding: "8px 16px",
-        background: dark ? "var(--grey-50)" : "var(--grey-950)",
-        color: dark ? "var(--grey-950)" : "var(--grey-50)",
-        border: "none",
-        borderRadius: "var(--radius-pill)",
-        fontSize: 12,
-        fontWeight: 600,
-        fontFamily: "var(--font-dm-sans)",
-        cursor: "pointer",
-        letterSpacing: "0.04em",
-      }}
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      className={`flex items-center justify-center ${className}`}
     >
-      {dark ? "☀ Light" : "☾ Dark"}
+      {dark ? <Sun size={20} weight="regular" /> : <Moon size={20} weight="regular" />}
     </button>
   );
 }

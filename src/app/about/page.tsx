@@ -1,94 +1,208 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
-
-const skills = [
-  "UI/UX Design",
-  "Web Design",
-  "HTML + CSS",
-  "Typesetting",
-  "Presentation",
-  "Brand Identity",
-  "Logo design",
-  "Motion Design",
-  "Publication design",
-];
 
 const contactLinks = [
   { label: "LinkedIn", href: "https://linkedin.com/in/devanshkh" },
   { label: "Email",    href: "mailto:devanshkh@gmail.com" },
 ];
 
-const clients = [
-  "Noise Labs",
-  "VIDA (Hero Motocorp)",
-  "Tanishq (Titan, Tata)",
-  "Hidesign",
-  "Péro",
+type ExperienceEntry = {
+  role: string;
+  company: string;
+  companyHref?: string;
+};
+
+const experience: ExperienceEntry[] = [
+  { role: "Head of Design / Design Engineer", company: "Noise",                 companyHref: "https://noise.xyz/" },
+  { role: "Design Consultant",                company: "VIDA, Hero MotoCorp",   companyHref: "https://www.vidaworld.com/" },
+  { role: "Communication Designer",           company: "VIDA, Hero MotoCorp",   companyHref: "https://www.vidaworld.com/" },
+  { role: "Display Stylist",                  company: "Titan Company Limited", companyHref: "https://www.tanishq.co.in/" },
+  { role: "Visual Merchandiser",              company: "Hidesign",              companyHref: "https://hidesign.com/" },
 ];
 
-const schools = [
-  "Parsons School of Design",
-  "National Institute of Design",
-  "Royal Academy of Art",
+type EducationEntry = {
+  school: string;
+  degree: string;
+  schoolHref?: string;
+};
+
+const education: EducationEntry[] = [
+  { school: "Parsons School of Design",        degree: "Masters in Communication Design",            schoolHref: "https://www.newschool.edu/parsons/" },
+  { school: "National Institute of Design",    degree: "Bachelor of Design (Visual Communications)", schoolHref: "https://www.nid.edu/home" },
+  { school: "Royal Academy of Art (Exchange)", degree: "Interactive Media Design",                   schoolHref: "https://www.kabk.nl/en/" },
 ];
 
 export default function About() {
   return (
-    <div className="pt-[var(--height-nav)]">
+    <div className="pt-[var(--height-nav)] max-w-[1512px] mx-auto">
 
-      {/* ── Bio + Headshot ──────────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-20 px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20">
-        <div className="flex flex-col gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-12 lg:gap-x-20 gap-y-12 md:gap-y-16 lg:gap-y-20 px-6 md:px-8 lg:px-12 py-12 md:py-16 lg:py-20 md:items-start">
+
+        {/* Bio — mobile 1, desktop col 1 row 1 */}
+        <section className="flex flex-col gap-6 md:gap-8 max-w-[65ch] md:col-start-1 md:row-start-1">
           <p
             className="text-foreground-muted"
-            style={{ fontSize: "var(--text-body)", lineHeight: "var(--leading-body)" }}
+            style={{ fontSize: "var(--text-h5)", lineHeight: "var(--leading-h5)" }}
           >
-            <strong className="text-foreground font-semibold">Devansh Khajanchi</strong> is a digital product designer based in{" "}
-            <strong className="text-foreground font-semibold">New York</strong>, currently the Head of Design at{" "}
-            <strong className="text-foreground font-semibold">Noise Labs</strong> and a Design Consultant at{" "}
-            <strong className="text-foreground font-semibold">VIDA Electric</strong>. He holds a Masters degree in Communication Design from{" "}
-            <strong className="text-foreground font-semibold">Parsons School of Design</strong> and a Bachelor of Design from the{" "}
-            <strong className="text-foreground font-semibold">National Institute of Design, Ahmedabad</strong>.
+            <BioName>Devansh Khajanchi</BioName> 👨‍💻 is a <BioEm>digital product designer</BioEm> based in 🗽{" "}
+            <BioName>New York</BioName>, currently the <BioEm>Head of Design</BioEm> at 📈{" "}
+            <BioLink href="https://noise.xyz/">Noise Labs</BioLink> and a <BioEm>Design Consultant</BioEm> at 🛵{" "}
+            <BioLink href="https://www.vidaworld.com/">VIDA Electric</BioLink>. He holds a <BioEm>Masters in Communication Design</BioEm> from 🎓{" "}
+            <BioLink href="https://www.newschool.edu/parsons/">Parsons School of Design</BioLink> and a <BioEm>Bachelor of Design</BioEm> from the 🏛️{" "}
+            <BioLink href="https://www.nid.edu/home">National Institute of Design, Ahmedabad</BioLink>.
           </p>
 
           <p
             className="text-foreground-muted"
-            style={{ fontSize: "var(--text-body)", lineHeight: "var(--leading-body)" }}
+            style={{ fontSize: "var(--text-h5)", lineHeight: "var(--leading-h5)" }}
           >
-            With a background spanning spatial and digital systems, he has designed retail experiences for brands like{" "}
-            <strong className="text-foreground font-semibold">Hidesign</strong> and{" "}
-            <strong className="text-foreground font-semibold">Tanishq</strong>, and crafted digital interfaces for{" "}
-            <strong className="text-foreground font-semibold">Hero Motocorp</strong>. Devansh&apos;s practice is rooted in accessibility, clarity, and design that bridges the physical and digital to create meaningful experiences for users.
+            With a background spanning <BioEm>spatial</BioEm> and <BioEm>digital</BioEm> systems, he has designed retail experiences for brands like 👜{" "}
+            <BioLink href="https://hidesign.com/">Hidesign</BioLink> and 💍{" "}
+            <BioLink href="https://www.tanishq.co.in/">Tanishq</BioLink>, and crafted digital interfaces for 🏍️{" "}
+            <BioLink href="https://www.heromotocorp.com/">Hero Motocorp</BioLink>. Devansh&apos;s practice is rooted in <BioEm>accessibility</BioEm>, <BioEm>clarity</BioEm>, and design that bridges the physical and digital to create meaningful experiences. 👋
           </p>
+        </section>
 
-          <div className="mt-4 md:mt-8">
-            <Button href="mailto:devanshkh@gmail.com" variant="primary">
-              Let&apos;s Chat
-            </Button>
-          </div>
-        </div>
-
-        <div>
+        {/* Image — mobile 2, desktop col 2 spans all rows */}
+        <div className="md:col-start-2 md:row-start-1 md:row-span-4">
           <Image
             src="/assets/images/about/headshot.jpg"
             alt="Devansh Khajanchi"
             width={2224}
             height={2965}
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="w-full h-auto"
+            sizes="(min-width: 768px) 480px, 100vw"
+            className="w-full h-auto max-w-[480px] rounded-md"
             priority
           />
         </div>
-      </section>
 
-      {/* ── Lists ───────────────────────────────────────────────── */}
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 lg:gap-12 px-6 md:px-8 lg:px-12 pb-16 md:pb-20 lg:pb-24">
-        <ListColumn heading="What I do"   items={skills} />
-        <ListColumn heading="Contact"     items={contactLinks} />
-        <ListColumn heading="Worked for"  items={clients} />
-        <ListColumn heading="Studied at"  items={schools} />
-      </section>
+        {/* Experience — mobile 3, desktop col 1 row 2 */}
+        <section className="md:col-start-1 md:row-start-2">
+          <SectionEyebrow>Experience</SectionEyebrow>
+          <div className="flex flex-col gap-6 md:gap-8 mt-6 md:mt-8">
+            {experience.map((entry) => (
+              <ExperienceItem key={`${entry.role}-${entry.company}`} entry={entry} />
+            ))}
+          </div>
+        </section>
 
+        {/* Education — mobile 4, desktop col 1 row 3 */}
+        <section className="md:col-start-1 md:row-start-3">
+          <SectionEyebrow>Education</SectionEyebrow>
+          <div className="flex flex-col gap-6 md:gap-8 mt-6 md:mt-8">
+            {education.map((entry) => (
+              <EducationItem key={`${entry.school}-${entry.degree}`} entry={entry} />
+            ))}
+          </div>
+        </section>
+
+        {/* Contact — mobile 5, desktop col 1 row 4 */}
+        <section className="md:col-start-1 md:row-start-4">
+          <ListColumn heading="Contact" items={contactLinks} />
+        </section>
+
+      </div>
+
+    </div>
+  );
+}
+
+function BioName({ children }: { children: React.ReactNode }) {
+  return <strong className="text-foreground font-semibold">{children}</strong>;
+}
+
+function BioLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-foreground font-semibold no-underline transition-colors hover:text-primary"
+    >
+      {children}
+    </a>
+  );
+}
+
+function BioEm({ children }: { children: React.ReactNode }) {
+  return <em className="font-display">{children}</em>;
+}
+
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <h2
+      className="text-foreground-muted uppercase"
+      style={{
+        fontSize: "var(--text-overline)",
+        fontWeight: "var(--weight-overline)",
+        lineHeight: "var(--leading-overline)",
+        letterSpacing: "var(--tracking-overline)",
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function ExperienceItem({ entry }: { entry: ExperienceEntry }) {
+  const company = entry.companyHref ? (
+    <a
+      href={entry.companyHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-foreground no-underline"
+    >
+      {entry.company}
+    </a>
+  ) : (
+    entry.company
+  );
+
+  return (
+    <div className="flex flex-col gap-1">
+      <div
+        className="text-foreground"
+        style={{ fontSize: "var(--text-body)", lineHeight: "var(--leading-body)", fontWeight: "var(--weight-semibold)" }}
+      >
+        {company}
+      </div>
+      <div
+        className="text-foreground-muted"
+        style={{ fontSize: "var(--text-body)", lineHeight: "var(--leading-body)" }}
+      >
+        {entry.role}
+      </div>
+    </div>
+  );
+}
+
+function EducationItem({ entry }: { entry: EducationEntry }) {
+  const school = entry.schoolHref ? (
+    <a
+      href={entry.schoolHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-foreground no-underline"
+    >
+      {entry.school}
+    </a>
+  ) : (
+    entry.school
+  );
+
+  return (
+    <div className="flex flex-col gap-1">
+      <div
+        className="text-foreground"
+        style={{ fontSize: "var(--text-body)", lineHeight: "var(--leading-body)", fontWeight: "var(--weight-semibold)" }}
+      >
+        {school}
+      </div>
+      <div
+        className="text-foreground-muted"
+        style={{ fontSize: "var(--text-body)", lineHeight: "var(--leading-body)" }}
+      >
+        {entry.degree}
+      </div>
     </div>
   );
 }

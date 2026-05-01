@@ -172,6 +172,7 @@
   /* Fonts */
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-eb-garamond);
 
   /* Primitive type scale (responsive via CSS vars from typography.css) */
   --font-size-xs:   var(--text-xs);

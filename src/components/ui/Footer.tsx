@@ -1,3 +1,5 @@
+import DarkModeToggle from "@/components/ui/DarkModeToggle";
+
 const links = [
   { label: "LinkedIn", href: "https://linkedin.com/in/devanshkh" },
   { label: "Email",    href: "mailto:devanshkh@gmail.com" },
@@ -12,32 +14,35 @@ export default function Footer() {
       style={{ background: "var(--primary)", color: "var(--grey-950)" }}
     >
       {/* ── Connect ─────────────────────────────────────── */}
-      <div className="mb-10 md:mb-16">
-        <h3
-          className="mb-2"
-          style={{
-            fontSize: "var(--text-label)",
-            fontWeight: "var(--weight-medium)",
-            color: "var(--grey-950)",
-          }}
-        >
-          Connect
-        </h3>
-        <ul className="flex flex-col gap-1">
-          {links.map(({ label, href }) => (
-            <li key={label}>
-              <a
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="no-underline"
-                style={{ fontSize: "var(--text-label)", color: "var(--grey-950)" }}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="mb-10 md:mb-16 flex justify-between items-start">
+        <div>
+          <h3
+            className="mb-2"
+            style={{
+              fontSize: "var(--text-label)",
+              fontWeight: "var(--weight-medium)",
+              color: "var(--grey-950)",
+            }}
+          >
+            Connect
+          </h3>
+          <ul className="flex flex-col gap-1">
+            {links.map(({ label, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="no-underline"
+                  style={{ fontSize: "var(--text-label)", color: "var(--grey-950)" }}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <DarkModeToggle />
       </div>
 
       {/* ── Divider ─────────────────────────────────────── */}
@@ -47,17 +52,22 @@ export default function Footer() {
       />
 
       {/* ── Statement ───────────────────────────────────── */}
-      <h2
-        className="text-[14vw] sm:text-[clamp(3rem,8.7vw,14rem)] sm:whitespace-nowrap mb-12 md:mb-20"
-        style={{
-          fontWeight: "var(--weight-black)",
-          lineHeight: 0.85,
-          letterSpacing: "-0.04em",
-          color: "var(--grey-950)",
-        }}
+      <div
+        className="mb-12 md:mb-20"
+        style={{ containerType: "inline-size" }}
       >
-        Every detail matters<span style={{ color: "var(--grey-50)" }}>.</span>
-      </h2>
+        <h2
+          className="text-[14vw] md:text-[9cqi] md:whitespace-nowrap"
+          style={{
+            fontWeight: "var(--weight-black)",
+            lineHeight: 0.85,
+            letterSpacing: "-0.04em",
+            color: "var(--grey-950)",
+          }}
+        >
+          Every detail matters<span style={{ color: "var(--grey-50)" }}>.</span>
+        </h2>
+      </div>
 
       {/* ── Bottom row ──────────────────────────────────── */}
       <div className="flex justify-between items-center">

@@ -66,35 +66,35 @@
     --border:               var(--grey-800);
     --border-strong:        var(--grey-600);
 
-    /* Primary — Orange */
-    --primary:              var(--orange-500);
-    --primary-hover:        var(--orange-400);
+    /* Primary — Orange (locked to brand anchor across themes) */
+    --primary:              var(--orange-600);
+    --primary-hover:        var(--orange-700);
     --primary-subtle:       var(--orange-950);
     --primary-foreground:   #ffffff;
 
-    /* Secondary — Blue */
+    /* Secondary — Blue (locked across themes) */
     --secondary:            var(--blue-500);
-    --secondary-hover:      var(--blue-400);
+    --secondary-hover:      var(--blue-600);
     --secondary-subtle:     var(--blue-950);
     --secondary-foreground: #ffffff;
 
-    /* Error */
-    --error:                var(--red-500);
+    /* Error (locked across themes) */
+    --error:                var(--red-600);
     --error-subtle:         var(--red-950);
     --error-foreground:     #ffffff;
 
-    /* Success */
-    --success:              var(--green-500);
+    /* Success (locked across themes) */
+    --success:              var(--green-600);
     --success-subtle:       var(--green-950);
     --success-foreground:   #ffffff;
 
-    /* Caution */
-    --caution:              var(--yellow-400);
+    /* Caution (locked across themes) */
+    --caution:              var(--yellow-500);
     --caution-subtle:       var(--yellow-950);
     --caution-foreground:   var(--grey-950);
 
-    /* AI */
-    --ai:                   var(--purple-500);
+    /* AI (locked across themes) */
+    --ai:                   var(--purple-600);
     --ai-subtle:            var(--purple-950);
     --ai-foreground:        #ffffff;
   }
