@@ -109,4 +109,12 @@
   --purple-900: oklch(0.26 0.102 300);   /* #2D124D */
   --purple-950: oklch(0.17 0.064 300);   /* #140626 */
 
+  /* =============================================================================
+     EXTERNAL BRAND COLORS — client/project brand hexes
+     Used inside case studies to render UI accurately. Not part of the portfolio
+     design system; do not reference for non-case-study UI.
+     ============================================================================= */
+
+  --noise-yellow: #F0F651;
+
 }

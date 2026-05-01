@@ -4,7 +4,9 @@ import ProjectPage from "@/components/sections/ProjectPage";
 import { getAdjacentProjects, getProjectBySlug, projects } from "@/data/projects";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return projects
+    .filter((p) => p.slug !== "noise-xyz")
+    .map((p) => ({ slug: p.slug }));
 }
 
 export const dynamicParams = false;

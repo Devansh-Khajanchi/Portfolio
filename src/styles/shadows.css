@@ -31,6 +31,14 @@
     --shadow-modal:   var(--shadow-xl);
     --shadow-toast:   var(--shadow-lg);
     --shadow-tooltip: var(--shadow-md);
+
+    /* -------------------------------------------------------------------------
+       NAMED INTENSITY ALIASES — shorthand for content-level elevation.
+       Map onto the primitive scale; flip automatically in dark mode.
+       ------------------------------------------------------------------------- */
+    --shadow-light:   var(--shadow-sm);
+    --shadow-medium:  var(--shadow-lg);
+    --shadow-strong:  var(--shadow-2xl);
   }
 
   .dark {

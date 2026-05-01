@@ -29,6 +29,7 @@ export type GalleryImage = {
   src: string;
   alt: string;
   caption?: string;
+  controls?: boolean;
 };
 
 export type PortfolioLink = {
@@ -46,6 +47,8 @@ export type PortfolioProject = {
   timeline?: string;
   summary: string;
   heroImage?: string;
+  cardImage?: string;
+  featured?: boolean;
   problem: string;
   process: string;
   outcome: string;

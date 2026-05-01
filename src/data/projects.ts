@@ -4,9 +4,13 @@ export const projects: PortfolioProject[] = [
   {
     slug: "noise-xyz",
     title: "Noise.xyz",
-    year: "",
+    year: "2026",
     role: "",
-    summary: "",
+    client: "Noise Labs",
+    summary:
+      "Took Noise from 0→1, defining trading flows, funding, social features, and AI-driven trend insights.",
+    cardImage: "/assets/images/projects/noise-xyz/sizzle-2.mp4",
+    featured: true,
     problem: "",
     process: "",
     outcome: "",
@@ -14,10 +18,10 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "vida-mobile",
-    title: "Vida Mobile Application",
+    title: "VIDA Mobile Application",
     year: "",
     role: "",
-    summary: "",
+    summary: "Customer facing application for VIDA owners",
     problem: "",
     process: "",
     outcome: "",
@@ -28,7 +32,7 @@ export const projects: PortfolioProject[] = [
     title: "VIDA V1 Dashboard",
     year: "",
     role: "",
-    summary: "",
+    summary: "Digital instrument cluster interface for the VIDA V1",
     problem: "",
     process: "",
     outcome: "",
@@ -36,10 +40,10 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "descend",
-    title: "Descend",
+    title: "Descend™",
     year: "",
     role: "",
-    summary: "",
+    summary: "Discover scuba diving spots with Descend",
     problem: "",
     process: "",
     outcome: "",
@@ -50,7 +54,8 @@ export const projects: PortfolioProject[] = [
     title: "Musée du Louvre",
     year: "",
     role: "",
-    summary: "",
+    summary:
+      "A redesigned visual identity and motion graphics system for The Louvre, Paris",
     problem: "",
     process: "",
     outcome: "",
@@ -58,10 +63,11 @@ export const projects: PortfolioProject[] = [
   },
   {
     slug: "too-good-to-go-plus",
-    title: "Too Good to Go +",
+    title: "Too Good To Go +",
     year: "",
     role: "",
-    summary: "",
+    summary:
+      "Adding a thoughtful new feature to the Too Good To Go application",
     problem: "",
     process: "",
     outcome: "",
@@ -72,7 +78,7 @@ export const projects: PortfolioProject[] = [
     title: "Gladiator Display",
     year: "",
     role: "",
-    summary: "",
+    summary: "Typeface design",
     problem: "",
     process: "",
     outcome: "",
@@ -82,6 +88,14 @@ export const projects: PortfolioProject[] = [
 
 export function getProjectBySlug(slug: string): PortfolioProject | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+export function getFeaturedProject(): PortfolioProject | undefined {
+  return projects.find((p) => p.featured);
+}
+
+export function getNonFeaturedProjects(): PortfolioProject[] {
+  return projects.filter((p) => !p.featured);
 }
 
 export function getAdjacentProjects(slug: string): {

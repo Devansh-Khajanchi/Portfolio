@@ -2,6 +2,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import type { PortfolioProject } from "@/types";
+import { isVideoSrc } from "@/lib/media";
+import AutoplayVideo from "@/components/ui/AutoplayVideo";
+
+/* =============================================================================
+   PROJECT PAGE
+   Generic project layout used by the dynamic /[slug] route. Renders any
+   project that can be expressed as: hero → meta → hero image → narrative
+   blocks (problem/process/outcome) → gallery → prev/next nav. Sections are
+   conditional on data presence so empty fields don't produce orphan headings.
+
+   Projects with bespoke layouts (e.g. /noise-xyz) bypass this template by
+   defining their own page file under src/app/<slug>/page.tsx.
+   ============================================================================= */
 
 type Props = {
   project: PortfolioProject;
@@ -207,18 +220,27 @@ export default function ProjectPage({ project, prev, next }: Props) {
             Gallery
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {project.gallery.map((img) => (
-              <figure key={img.src} className="flex flex-col gap-2">
+            {project.gallery.map((item) => (
+              <figure key={item.src} className="flex flex-col gap-2">
                 <div className="relative w-full aspect-[4/3] overflow-hidden rounded-md bg-surface-raised">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                  />
+                  {isVideoSrc(item.src) ? (
+                    <AutoplayVideo
+                      src={item.src}
+                      ariaLabel={item.alt}
+                      controls={item.controls}
+                      fill
+                    />
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                    />
+                  )}
                 </div>
-                {img.caption ? (
+                {item.caption ? (
                   <figcaption
                     className="text-foreground-muted"
                     style={{
@@ -226,7 +248,7 @@ export default function ProjectPage({ project, prev, next }: Props) {
                       lineHeight: "var(--leading-body-sm)",
                     }}
                   >
-                    {img.caption}
+                    {item.caption}
                   </figcaption>
                 ) : null}
               </figure>

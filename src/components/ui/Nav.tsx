@@ -5,15 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { List, X } from "@phosphor-icons/react";
 
-const internalLinks = [
-  { href: "/",         label: "Work" },
-  { href: "/creative", label: "Play" },
-  { href: "/about",    label: "About" },
-];
+type NavLink = { href: string; label: string; external?: boolean };
 
-const externalLinks = [
-  { href: "https://github.com/Devansh-Khajanchi", label: "GitHub" },
-  { href: "/devansh-khajanchi-resume-2026.pdf",    label: "Resume" },
+const navLinks: NavLink[] = [
+  { href: "/",                                      label: "Work" },
+  { href: "/creative",                              label: "Play" },
+  { href: "https://github.com/Devansh-Khajanchi",   label: "Github", external: true },
+  { href: "/about",                                 label: "About" },
+  { href: "/devansh-khajanchi-resume-2026.pdf",     label: "Resume", external: true },
 ];
 
 export default function Nav() {
@@ -26,7 +25,7 @@ export default function Nav() {
   return (
     <>
       {/* ── Bar ─────────────────────────────────────────────────────── */}
-      <nav className="fixed inset-x-0 top-0 z-sticky h-[var(--height-nav)] flex items-center justify-between px-6 md:px-8 lg:px-12 bg-background">
+      <nav className="fixed inset-x-0 top-0 z-sticky h-[var(--height-nav)] flex items-center justify-between px-6 md:px-8 lg:px-12 bg-transparent">
         <Link
           href="/"
           onClick={() => setOpen(false)}
@@ -41,26 +40,27 @@ export default function Nav() {
 
         {/* Desktop links — hidden below md */}
         <div className="hidden md:flex items-center gap-7">
-          {internalLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`no-underline text-base ${isActive(href) ? "text-primary font-medium" : "text-foreground-muted font-normal"}`}
-            >
-              {label}
-            </Link>
-          ))}
-          {externalLinks.map(({ href, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="no-underline text-base text-foreground-muted font-normal"
-            >
-              {label}
-            </a>
-          ))}
+          {navLinks.map(({ href, label, external }) =>
+            external ? (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline text-base text-foreground-muted font-normal"
+              >
+                {label}
+              </a>
+            ) : (
+              <Link
+                key={label}
+                href={href}
+                className={`no-underline text-base ${isActive(href) ? "text-primary font-medium" : "text-foreground-muted font-normal"}`}
+              >
+                {label}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Hamburger — visible below md */}
@@ -75,31 +75,31 @@ export default function Nav() {
 
       {/* ── Mobile menu ─────────────────────────────────────────────── */}
       {open && (
-        <div className="fixed inset-x-0 top-[var(--height-nav)] bottom-0 z-overlay bg-background flex flex-col px-6 pt-10 pb-8 md:hidden">
+        <div className="fixed inset-x-0 top-[var(--height-nav)] bottom-0 z-overlay bg-white dark:bg-black flex flex-col px-6 pt-10 pb-8 md:hidden">
           <div className="flex flex-col gap-6">
-            {internalLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className={`no-underline text-4xl font-bold tracking-tight leading-none ${isActive(href) ? "text-primary" : "text-foreground"}`}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-          <div className="mt-auto flex gap-6">
-            {externalLinks.map(({ href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="no-underline text-sm text-foreground-muted"
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks.map(({ href, label, external }) =>
+              external ? (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="no-underline text-4xl font-bold tracking-tight leading-none text-foreground"
+                >
+                  {label}
+                </a>
+              ) : (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className={`no-underline text-4xl font-bold tracking-tight leading-none ${isActive(href) ? "text-primary" : "text-foreground"}`}
+                >
+                  {label}
+                </Link>
+              ),
+            )}
           </div>
         </div>
       )}

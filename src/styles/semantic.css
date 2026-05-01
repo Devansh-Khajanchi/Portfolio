@@ -8,7 +8,7 @@
 
   :root {
     /* Surface */
-    --background:           var(--grey-50);
+    --background:           #ffffff;
     --surface:              #ffffff;
     --surface-raised:       var(--grey-100);
     --foreground:           var(--grey-950);
@@ -58,7 +58,7 @@
 
   .dark {
     /* Surface */
-    --background:           var(--grey-950);
+    --background:           #000000;
     --surface:              var(--grey-900);
     --surface-raised:       var(--grey-800);
     --foreground:           var(--grey-50);
