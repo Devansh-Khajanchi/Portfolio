@@ -48,6 +48,7 @@ export type PortfolioProject = {
   summary: string;
   heroImage?: string;
   cardImage?: string;
+  cardBorder?: boolean;
   featured?: boolean;
   problem: string;
   process: string;

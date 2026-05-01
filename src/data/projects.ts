@@ -35,6 +35,7 @@ export const projects: PortfolioProject[] = [
     role: "",
     summary: "Digital instrument cluster interface for the VIDA V1",
     cardImage: "/assets/images/projects/vida-v1-dashboard/cover.mp4",
+    cardBorder: true,
     problem: "",
     process: "",
     outcome: "",
