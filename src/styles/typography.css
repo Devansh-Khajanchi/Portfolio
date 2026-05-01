@@ -66,10 +66,13 @@
      ------------------------------------------------------------------------- */
 
   /* Display — hero titles, above h1 */
-  --text-display:          var(--text-7xl);
-  --leading-display:       var(--leading-tight);
-  --weight-display:        var(--weight-bold);
-  --tracking-display:      var(--tracking-tightest);
+  --text-display:           var(--text-7xl);
+  --leading-display:        var(--leading-tight);
+  --weight-display:         var(--weight-bold);     /* default */
+  --weight-display-light:   var(--weight-light);
+  --weight-display-medium:  var(--weight-medium);
+  --weight-display-bold:    var(--weight-bold);
+  --tracking-display:       var(--tracking-tightest);
 
   /* H1 */
   --text-h1:               var(--text-6xl);
