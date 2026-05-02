@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, EB_Garamond, Geist_Mono } from "next/font/google";
+import { DM_Sans, DM_Mono, EB_Garamond } from "next/font/google";
 import Nav from "@/components/ui/Nav";
 import Footer from "@/components/ui/Footer";
 import AgentationWrapper from "@/components/ui/AgentationWrapper";
@@ -12,9 +12,10 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-const geistMono = Geist_Mono({
+const dmMono = DM_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  weight: ["400", "500"],
+  variable: "--font-dm-mono",
 });
 
 const ebGaramond = EB_Garamond({
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${geistMono.variable} ${ebGaramond.variable} antialiased`}
+      className={`${dmSans.variable} ${dmMono.variable} ${ebGaramond.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
