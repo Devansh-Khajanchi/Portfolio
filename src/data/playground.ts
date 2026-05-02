@@ -96,4 +96,15 @@ export const playgroundItems: PlaygroundItem[] = [
     bg: "var(--color-orange-300)",
     fg: "var(--color-orange-950)",
   },
+  {
+    id: "ascii-scroll",
+    kind: "link",
+    title: "ASCII Scroll",
+    href: "/lab/ascii",
+    x: 700, y: 1340,
+    w: 300, h: 220,
+    rotation: -4,
+    src: "/assets/images/creative/ascii-scroll.mp4",
+    alt: "ASCII art scroll experiment",
+  },
 ];

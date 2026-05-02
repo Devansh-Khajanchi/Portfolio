@@ -45,8 +45,8 @@ export type PlaygroundItem = {
   w: number;
   h: number;
   rotation: number;
-  /** "media" (default): show src as image/video. "music": modal renders MusicPlaylistView. */
-  kind?: "media" | "music";
+  /** "media" (default): show src as image/video. "music": modal renders MusicPlaylistView. "link": tap opens href in a new tab; modal is bypassed. */
+  kind?: "media" | "music" | "link";
   /** Path under /public — .mp4/.mov/.webm/.ogv render as <video>, anything else (incl. .gif) as <img>. */
   src?: string;
   alt?: string;

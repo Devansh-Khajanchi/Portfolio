@@ -165,7 +165,13 @@ export default function InfiniteCanvas() {
             <PlaygroundCard
               key={item.id}
               item={item}
-              onOpen={() => setSelected(item)}
+              onOpen={() => {
+                if (item.kind === "link" && item.href) {
+                  window.open(item.href, "_blank", "noopener,noreferrer");
+                  return;
+                }
+                setSelected(item);
+              }}
             />
           ))}
         </motion.div>

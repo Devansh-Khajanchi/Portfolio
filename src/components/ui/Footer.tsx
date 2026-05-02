@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import DarkModeToggle from "@/components/ui/DarkModeToggle";
 
 const links = [
@@ -5,7 +8,12 @@ const links = [
   { label: "Email",    href: "mailto:devanshkh@gmail.com" },
 ];
 
+const HIDE_ON: ReadonlyArray<string> = ["/lab/ascii"];
+
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname && HIDE_ON.includes(pathname)) return null;
+
   const year = new Date().getFullYear();
 
   return (
